@@ -12,7 +12,7 @@ def generate_cloze_question(sentence, noun_phrase):
 
 def clean_up_sentence(sentence):
     """
-    :param sentence: a TextBlob sentence object
+    :param sentence: a TextBlob Sentence Object
     Returns a processed string a TextBlob sentence object.
     """
     return sentence.dict['raw'].lower().replace('\n', ' ').strip()
