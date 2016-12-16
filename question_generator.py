@@ -45,7 +45,6 @@ def select_random_cloze_question(cloze_questions):
 
 
 if __name__ == "__main__":
-    sentinel = ''
     text = input()
     cloze_questions = generate_cloze_questions(text)
     while cloze_questions:
