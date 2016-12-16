@@ -16,6 +16,7 @@ SENTENCE = TextBlob(TEXT).sentences[0]
 
 
 def run_tests():
+    """ Need to refactor tests """
     assert "\n" not in question_generator.clean_up_sentence(SENTENCE)
     assert "--" in question_generator.clean_up_sentence(SENTENCE)
     assert question_generator.generate_cloze_question(SENTENCE, "titular threat") == (
@@ -28,6 +29,11 @@ def run_tests():
         "not unlike the grey goo scenario proposed by technological theorists fearful of"
         " ___________________________________.",
         'artificial intelligence run rampant')
+    cloze_questions = question_generator.generate_cloze_questions(TEXT)
+    assert len(cloze_questions) == 9
+    cloze_question, cloze_questions = question_generator.select_random_cloze_question(cloze_questions)
+    assert len(cloze_question) == 2
+    assert len(cloze_questions) == 8
 
     print("Tests pass!")
 
